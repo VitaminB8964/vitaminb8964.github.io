@@ -1,5 +1,5 @@
 <!DOCUMENT html>
-<html>
+<html lang="">
     <head>
         <meta charset="UTF-8">
 
@@ -24,8 +24,6 @@
         <script src="./bootstrap/js/bootstrap.js"></script>
         <script src="./jquery.js"></script>
         <script src="./lottie.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
         <style>
             body {
                 background: black;
@@ -80,7 +78,6 @@
                 text-align: center;
                 font-size: 3em;
                 text-transform: capitalize;
-                border: thin solid;
                 border-width:2px;
                 border-radius: 7px;
                 width: 65%;
@@ -88,12 +85,7 @@
                 font-weight: 900;
                 transform: translateX(-50%);
             }
-            #tips {
-                color: gray;
-            }
-            #tips::after {
-                content: "（🖱/👆 ↓）";
-            }
+
             @keyframes UpStream_animation {
                 0% {
                     transform: translate(-50%, 120px); 
@@ -141,7 +133,7 @@
             .UpStream_animation {animation: 1s UpStream_animation;}
             @keyframes HideAnimation{
                 0%{opacity: 100%;}
-                50%{opacity: 0%;}
+                50%{opacity: 0;}
                 100%{opacity: 100%;}
             }
             .Hide_animation {animation: 1s HideAnimation;}
@@ -161,7 +153,7 @@
             }
             @keyframes disappear {
                 0% {opacity: 100%;}
-                100% {opacity: 0%;}
+                100% {opacity: 0;}
             }
             .disappear {
                 animation: 3s disappear;
@@ -187,7 +179,7 @@
             }
             @keyframes dot_loading {
                 0% {opacity: 100%;}
-                25% {opacity: 0%;}
+                25% {opacity: 0;}
                 100% {opacity: 100%;}
             }
             #dot_loading_1 {
