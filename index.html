@@ -251,6 +251,7 @@
                 <div class="btn-group" role="group" aria-label="...">
                     <button type="button" class="btn btn-default" id="UpStream">上升气流</button>
                     <button type="button" class="btn btn-default" id="HideCloth">隐藏遮羞布</button>
+                    <button type="button" class="btn btn-default" id="Cloth">显示遮羞布</button>
                     <button type="button" class="btn btn-default" id="BiggerMamma">胸部变大（宽度窄的屏幕可能不生效）</button>
                     <button type="button" class="btn btn-default" id="OpenChampagne">开香槟🍾（开多了会卡，不要作死）</button>
                 </div>
@@ -295,21 +296,18 @@
                 if (reverse_picture_color) {
                     $('#Picture_Border').addClass("Hide_animation");
                     $('#Dead_Picture').addClass("CancelBlur_Reverse");
-                    setTimeout(function(){
-                        $('#Picture_Border').removeClass('Hide_animation');
-                        $('#Dead_Picture').removeClass('CancelBlur_Reverse');
-                    },1100);
-                console.log("Reversed.")
                 } else {
                     $('#Picture_Border').addClass("Hide_animation");
                     $('#Dead_Picture').addClass("CancelBlur");
-                    setTimeout(function(){
-                        $('#Picture_Border').removeClass('Hide_animation');
-                        $('#Dead_Picture').removeClass('CancelBlur');
-                    },1100);
                 }
                 
             };
+            document.getElementById("Cloth").onclick = function (){
+                $('#Picture_Border').removeClass('Hide_animation');
+                $('#Dead_Picture').removeClass('CancelBlur_Reverse');
+                console.log("Reversed.")
+
+            }
             document.getElementById("BiggerMamma").onclick = function(){
                 $('#Dead_Picture').addClass("Bigger");
                 setTimeout(function(){$('#Dead_Picture').removeClass('Bigger')},2000);
