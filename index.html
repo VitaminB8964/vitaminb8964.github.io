@@ -251,13 +251,9 @@
                 <div class="btn-group" role="group" aria-label="...">
                     <button type="button" class="btn btn-default" id="UpStream">上升气流</button>
                     <button type="button" class="btn btn-default" id="HideCloth">隐藏遮羞布</button>
-                    <button type="button" class="btn btn-default" id="Cloth">显示遮羞布</button>
                     <button type="button" class="btn btn-default" id="BiggerMamma">胸部变大（宽度窄的屏幕可能不生效）</button>
                     <button type="button" class="btn btn-default" id="OpenChampagne">开香槟🍾（开多了会卡，不要作死）</button>
                 </div>
-                <hr />
-                <h4>留下致辞</h4>
-                <div id="gitalk-container"></div>
             </div>
         </div>
 
@@ -276,17 +272,6 @@
             document.getElementById("Gongpin").innerHTML = "给 "+ name +" 送上贡品";
             document.getElementById("loading_tips").innerHTML = "马上就好";
 
-            /* Gitalk 评论区配置 */
-            var gitalk = new Gitalk({
-                clientID: 'be96a41462c84525e077',
-                clientSecret: '5be136bc48441c539d9203aa5c61dbadb42d3309',
-                repo: 'Lingtang_OnInternet',
-                owner: 'ASOULFucker',
-                admin: ['ASOULFucker'],
-                id: location.pathname,      // Ensure uniqueness and length less than 50
-                distractionFreeMode: false  // Facebook-like distraction free mode
-            });
-            gitalk.render('gitalk-container');
 
             document.getElementById("UpStream").onclick = function(){
                 $('#Dead_Picture').addClass("UpStream_animation");
@@ -296,18 +281,21 @@
                 if (reverse_picture_color) {
                     $('#Picture_Border').addClass("Hide_animation");
                     $('#Dead_Picture').addClass("CancelBlur_Reverse");
+                    setTimeout(function(){
+                        $('#Picture_Border').removeClass('Hide_animation');
+                        $('#Dead_Picture').removeClass('CancelBlur_Reverse');
+                    },1100);
+                console.log("Reversed.")
                 } else {
                     $('#Picture_Border').addClass("Hide_animation");
                     $('#Dead_Picture').addClass("CancelBlur");
+                    setTimeout(function(){
+                        $('#Picture_Border').removeClass('Hide_animation');
+                        $('#Dead_Picture').removeClass('CancelBlur');
+                    },1100);
                 }
                 
             };
-            document.getElementById("Cloth").onclick = function (){
-                $('#Picture_Border').removeClass('Hide_animation');
-                $('#Dead_Picture').removeClass('CancelBlur_Reverse');
-                console.log("Reversed.")
-
-            }
             document.getElementById("BiggerMamma").onclick = function(){
                 $('#Dead_Picture').addClass("Bigger");
                 setTimeout(function(){$('#Dead_Picture').removeClass('Bigger')},2000);
